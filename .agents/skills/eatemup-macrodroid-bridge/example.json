@@ -1,0 +1,27 @@
+{
+  "macros": [
+    {
+      "name": "EatEmUp Battery Alert",
+      "trigger": {
+        "type": "battery_level",
+        "value": 20
+      },
+      "action": {
+        "type": "show_notification",
+        "text": "Battery low"
+      },
+      "requires_approval": true
+    },
+    {
+      "name": "EatEmUp AutoTools Panel",
+      "trigger": {
+        "type": "manual_trigger"
+      },
+      "action": {
+        "type": "autotools_web_screen",
+        "screen": "EatEmUp"
+      },
+      "requires_approval": true
+    }
+  ]
+}

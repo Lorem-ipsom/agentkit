@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "name": "plugin-skill-bridge",
+  "scope": "all discoverable plugins",
+  "policy": {
+    "default": "deny",
+    "discovery": "read-only",
+    "tool_execution": "requires provider connection and capability authorization",
+    "sensitive_actions": "explicit per-action approval",
+    "secrets": "never persist in registry or skill instructions"
+  },
+  "associations": [
+    {"group":"development","providers":["GitHub","Vercel","Replit","Figma"],"capabilities":["repository","deployment","design"],"status":"discovery"},
+    {"group":"storage","providers":["Google Drive","Notion","Supabase","Pinata"],"capabilities":["files","database","ipfs"],"status":"discovery"},
+    {"group":"communications","providers":["Gmail","Google Calendar","HubSpot"],"capabilities":["email","calendar","crm"],"status":"discovery"},
+    {"group":"blockchain","providers":["Coinbase","Blockscout","CoinGecko"],"capabilities":["wallet","chain-data","market-data"],"status":"discovery"}
+  ],
+  "note": "Provider names are intended mappings, not claims that Vercel connectors are installed."
+}
